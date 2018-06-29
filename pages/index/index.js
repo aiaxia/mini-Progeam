@@ -1,13 +1,23 @@
 //index.js
 //获取应用实例
 const app = getApp()
+// var common = require('common.js');
+// import "../common/icon/iconfont";
 
 Page({
   data: {
     motto: 'Hello World',
+    index: 0,
     userInfo: {},
     hasUserInfo: false,
+    array: ['美国', '中国', '巴西', '日本'],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  fristNAV:function(){
+    frist.renderDom();
+  },
+  exFun(v){
+      console.log(v) 
   },
   //事件处理函数
   bindViewTap: function() {

@@ -1,4 +1,6 @@
 /**index.wxss**/
+@import "../common/icon/iconfont.wxss";
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -18,4 +20,13 @@
 
 .usermotto {
   margin-top: 200px;
+}
+
+.container{
+  padding: 5%;
+}
+
+.selectbox{
+  width: 100%;
+  text-align: left;
 }
