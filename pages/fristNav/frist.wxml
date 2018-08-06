@@ -52,7 +52,7 @@
         </view>
     </view>
     <view class="bottom">
-        <button>马上估值</button>
+        <button bindtap="bindSubmit">马上估值</button>
         <span>请完整填写信息，以便估价更加精准</span>
     </view>
 </view>
