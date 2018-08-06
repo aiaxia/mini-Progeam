@@ -2,12 +2,15 @@
   "pages":[
     "pages/index/index",
     "pages/fristNav/frist",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/series/series",
+    "pages/brand/brand",
+    "pages/year/year"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "车估估",
     "navigationBarTextStyle":"black"
   }
 }

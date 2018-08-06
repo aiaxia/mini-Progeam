@@ -2390,6 +2390,11 @@ Page({
     }]
 
   },
+  onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '车估估'//页面标题为路由参数
+    });
+  },
 
   bindMultiPickerChange: function (e) {
     this.setData({

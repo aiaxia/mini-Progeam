@@ -1,0 +1,19 @@
+<view class="flex box box-lr">
+    <scroll-view class="flex groups box box-tb" scroll-y="true" scroll-into-view="{{scrollIntoView}}">
+        <block wx:for="{{groups}}" wx:key="{{groups.groupName}}" wx:for-item="group">
+            <view class="flex">
+                <view class="flex group-users" id="{{group.groupName}}">
+                    <view class="word">{{group.groupName}}</view>
+                    <view class="user box box-lr" wx:key="{{id}}" wx:for="{{group.users}}" wx:for-item="user" wx:for-index="idx">
+                        <view class="flex user-name" data-id="{{user.id}}" data-name="{{user.name}}" bindtap="onChoicebrand">{{user.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </scroll-view>
+    <view class="nav box box-tb" bindtouchmove="touchmove" bindtouchcancel="touchcancel" bindtouchend="touchend">
+        <view class="flex box box-align-center box-pack-center letter" bindtap="tabLetter" wx:key="{{*this}}" data-index="{{item}}" wx:for="{{letters}}">
+            <text class="letter-text {{selected == item ? 'letter-actived' : ''}}">{{item}}</text>
+        </view>
+    </view>
+</view>

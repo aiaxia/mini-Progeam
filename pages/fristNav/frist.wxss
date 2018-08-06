@@ -1,8 +1,8 @@
 @import '../../iconfont.wxss';
-.selectbox{
+.fristbox{
     /* text-align: center; */
 }
-.selectbox .top1{
+.fristbox .top1{
     text-align: center;
     font-size: 12px;
     width: 100%;
@@ -10,13 +10,13 @@
     padding-top: 57px;
     background: rgba(221, 219, 219,.5); 
 }
-.selectbox .top1 text{
+.fristbox .top1 text{
     font-weight: bold;
     color: #BD081C;
     font-size: 28px;
     margin-right: 3px;
 }
-.selectbox .middle{
+.fristbox .middle{
     width: 80%;
     height: 336px;
     margin: 0 auto;
