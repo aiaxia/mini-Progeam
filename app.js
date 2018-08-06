@@ -2,7 +2,8 @@
 App({
   environment:{
     brandId: undefined,
-    brandName: ''
+    brandName: '',
+      userPhoneNumber:''
   },
   onLaunch: function () {
     // 展示本地存储能力
@@ -14,6 +15,7 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          wx.getPhoneNumber()
       }
     })
     // 获取用户信息
@@ -37,7 +39,27 @@ App({
       }
     })
   },
-  globalData: {
+    getPhoneNumber: function(e) {
+        console.log(e.detail.errMsg);
+        console.log(e.detail.iv);
+        console.log(e.detail.encryptedData);
+        if (e.detail.errMsg == 'getPhoneNumber:fail user deny'){
+            wx.showModal({
+                title: '提示',
+                showCancel: false,
+                content: '未授权',
+                success: function (res) { }
+            })
+        } else {
+            wx.showModal({
+                title: '提示',
+                showCancel: false,
+                content: '同意授权',
+                success: function (res) { }
+            })
+        }
+    },
+    globalData: {
     userInfo: null
   }
 })
