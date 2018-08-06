@@ -33,6 +33,7 @@ Page({
             'content-type': 'application/json' // 默认值
           },
           success: function(res) {
+            console.log(res.data.data.content)
             t.setData({
               series: res.data.data.content
             })
@@ -43,7 +44,11 @@ Page({
   },
   // 点击车系
   onClickseries(e){
-    console.log(e.currentTarget.dataset)
+    env.seriesId = e.currentTarget.dataset.id;
+    env.seriesName = e.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: '../year/year'
+    })
   },
   onChoicestyle(e){
     let t = this;

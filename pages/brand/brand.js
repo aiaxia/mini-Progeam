@@ -192,7 +192,6 @@ Page({
   onChoicebrand(e){
     env.brandId = e.currentTarget.dataset.id;
     env.brandName = e.currentTarget.dataset.name;
-    console.log(e)
     wx.navigateTo({
       url: '../series/series'
     })
