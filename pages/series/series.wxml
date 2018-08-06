@@ -1,7 +1,7 @@
 <view class="series">
     <p>车型级别</p>
     <view class="itembox">
-        <block wx:key="{{*this}}" wx:for="{{styles}}" wx:for-item="group">
+        <block wx:key="{{item}}" wx:for="{{styles}}" wx:for-item="group">
             <view class="item" data-style="{{group}}" bindtap="onChoicestyle">
                 {{group}}
             </view>
@@ -12,7 +12,7 @@
     </view>
     <div>热门车系</div>
     <view class="seriesbox">
-        <block wx:key="{{id}}" wx:for="{{series}}" wx:for-item="item">
+        <block wx:key="id" wx:for="{{series}}" wx:for-item="item">
             <view class="seriesitem" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="onClickseries">
                 {{item.name}}
             </view>

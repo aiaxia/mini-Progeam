@@ -12,7 +12,7 @@
         </block>
     </scroll-view>
     <view class="nav box box-tb" bindtouchmove="touchmove" bindtouchcancel="touchcancel" bindtouchend="touchend">
-        <view class="flex box box-align-center box-pack-center letter" bindtap="tabLetter" wx:key="{{*this}}" data-index="{{item}}" wx:for="{{letters}}">
+        <view class="flex box box-align-center box-pack-center letter" bindtap="tabLetter" wx:key="index" data-index="{{item}}" wx:for="{{letters}}">
             <text class="letter-text {{selected == item ? 'letter-actived' : ''}}">{{item}}</text>
         </view>
     </view>

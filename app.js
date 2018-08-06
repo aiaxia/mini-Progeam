@@ -2,7 +2,13 @@
 App({
   environment:{
     brandId: undefined,
-    brandName: ''
+    brandName: '',
+    seriesId: undefined,
+    seriesId: undefined,
+    seriesName: '',
+    levelId: undefined,
+    timeModel: '',
+    timeModelName: '',
   },
   onLaunch: function () {
     // 展示本地存储能力
