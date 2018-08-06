@@ -1,5 +1,15 @@
 //app.js
 App({
+  environment:{
+    brandId: undefined,
+    brandName: '',
+    seriesId: undefined,
+    seriesName: '',
+    levelId: undefined,
+    timeModel: '',
+    timeModelName: '',
+      userPhone:''
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -10,6 +20,13 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          //发起网络请求
+          if(res.code){
+              console.log(res.code)
+              // wx.getPhoneNumber(res)
+          }else{
+              console.log('获取用户登录失败！'+res.errMsg)
+          }
       }
     })
     // 获取用户信息
@@ -33,7 +50,7 @@ App({
       }
     })
   },
-  globalData: {
+    globalData: {
     userInfo: null
   }
 })

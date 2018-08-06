@@ -10,8 +10,12 @@ Page({
     index: 0,
     userInfo: {},
     hasUserInfo: false,
-    array: ['美国', '中国', '巴西', '日本'],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  onLoad: function () {
+    wx.setNavigationBarTitle({
+      title: '车估估'
+    });
   },
   fristNAV:function(){
     frist.renderDom();

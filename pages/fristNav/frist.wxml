@@ -1,4 +1,4 @@
-<view class="selectbox">
+<view class="fristbox">
     <view class="top1">
         <text>{{num}}</text>车主进行了车辆的精准评估
     </view>
@@ -7,9 +7,11 @@
         <view class="section">
             <view class="picker">
                 <view><span>*</span>选择车型</view>
-                <view class="con">
-                    <i class="iconfont icon-jiantouyou" />
-                </view>
+                    <view class="con">
+                        <navigator url="../brand/brand" >
+                            <i class="iconfont icon-jiantouyou" />
+                        </navigator>
+                    </view>
             </view>
         </view>
         <view class="section">
@@ -52,7 +54,11 @@
         </view>
     </view>
     <view class="bottom">
-        <button bindtap="bindSubmit">马上估值</button>
+        <navigator url="../result/result" >
+            <button>
+                马上估值
+            </button>
+        </navigator>
         <span>请完整填写信息，以便估价更加精准</span>
     </view>
 </view>

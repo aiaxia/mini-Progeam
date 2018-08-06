@@ -24,13 +24,36 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "车系",
+					"pathName": "pages/brand/brand",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "车型车系",
+					"pathName": "pages/series/series",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "年款",
+					"pathName": "pages/year/year",
+					"query": ""
+				}
+			]
 		}
 	}
 }
