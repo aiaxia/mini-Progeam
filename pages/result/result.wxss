@@ -3,6 +3,7 @@
 .main  {
     background-color: rgba(221, 219, 219,.5);
     font-size: 30rpx;
+    height: 100%;
 }
 .main>view {
     margin-bottom: 20px;
@@ -42,12 +43,22 @@
     color: rgba(34,34,34,0.40);
     font-size: 30rpx;
 }
+
+.price .price-content-btn .price-active {
+    color: #fff;
+    background-color: #BD081C;
+}
+
 .price .price-content-box {
     background: rgba(255,255,255,0.10);
     box-shadow: 0 0 8px 0 rgba(253,10,61,0.10);
     border-radius: 3px;
     padding: 32rpx;
     text-align: center;
+}
+
+.price .price-content-box span{
+    font-size: 22rpx;
 }
 
 .price .price-content-box .price-content-box-tip {
@@ -79,13 +90,24 @@ ec-canvas {
   }
 
 /* 未来5年估值 */
-.futrue {
+.future {
     height: 375px;
+    margin-bottom: 0px;
 }
 
-.futrue .container {
+.future .container {
     width: 640rpx;
     margin: auto;
+    height: 70%;
+}
+
+.future button{
+    background: #BD081C;
+    border-radius: 3px;
+    height: 96rpx;
+    width: 90%;
+    color: #fff;
+    line-height: 96rpx;
 }
 
 /* 查看精准报价 */
