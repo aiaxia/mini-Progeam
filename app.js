@@ -6,6 +6,8 @@ App({
     firstLicenseTime: '',
     levelId: undefined,
     licenseCity: '',
+    multiIndex: undefined,
+    date: undefined,
     mileage: undefined,
     originalPrice: undefined,
     phone: '',

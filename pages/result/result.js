@@ -32,8 +32,7 @@ Page({
                 'content-type': 'application/json'
             },
             success: function(res) {
-              console.log(res.data);
-              t.setData({originalPrice:'10'},function(){
+                t.setData({originalPrice:'10'},function(){
                 t.init_fetruebar();
                 t.getPriceData();
             });
@@ -172,12 +171,12 @@ Page({
                 'content-type': 'application/json'
             },
             success: function(res) {
-              console.log(res.data);
-              t.setData({
-                rank: res.data.rank,
-                minEstimate: res.data.minEstimate,
-                maxEstimate: res.data.maxEstimate,
-                apply_id: res.data.apply_id,
+                console.log(res.data);
+                t.setData({
+                    rank: res.data.rank,
+                    minEstimate: res.data.minEstimate,
+                    maxEstimate: res.data.maxEstimate,
+                    apply_id: res.data.apply_id,
                 },function(){
                     t.init_rankbar();
                 });
