@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/fristNav/frist",
     "pages/logs/logs",
+    "pages/result/result",
     "pages/series/series",
     "pages/brand/brand",
     "pages/year/year"
