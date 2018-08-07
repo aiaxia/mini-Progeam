@@ -55,7 +55,7 @@
     </view>
     <view class="bottom">
         <navigator url="../result/result" >
-            <button>
+            <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
                 马上估值
             </button>
         </navigator>
