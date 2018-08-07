@@ -2466,6 +2466,9 @@ Page({
     let t = this;
 		var testPhone = /^[1][0-9]*$/;
     let phoneclear = e.detail.value.replace(/\s/g, '');
+    this.setData({
+      phone: phoneclear,
+    });
     if(phoneclear.length>11){ // 只能输入11位手机
       env.phone = phoneclear.substring(0, 11);
       this.setData({
@@ -2489,6 +2492,7 @@ Page({
   //点击马上估值
   onClickbtn(){
     let t = this;
+
     if(!this.data.date.length || !this.data.multiIndex.length || !this.data.mileage.length || !this.data.phone.length || this.data.phoneeError){
       wx.showToast({
         title: '请正确且完整填写信息！',

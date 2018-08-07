@@ -4,7 +4,6 @@ import * as echarts from '../../ec-canvas/echarts';
 const app = getApp();
 let env = getApp().environment;
 
-
 Page({
     data: {
         img: {
@@ -12,13 +11,11 @@ Page({
             mode: 'aspectFill',
         },
         car:{},
-
         rank: '',
         minEstimate: '',
         maxEstimate: '',
         apply_id: '',
         originalPrice:'',
-
         curIndex: '2',
         minPrice: '',
         maxPrice: '',
@@ -42,36 +39,31 @@ Page({
                 'content-type': 'application/json'
             },
             success: function(res) {
-<<<<<<< HEAD
-              t.setData({originalPrice:'10'},function(){
-                t.init_futurebar();
-=======
                 t.setData({originalPrice:'10'},function(){
-                t.init_fetruebar();
->>>>>>> 286fe769dd7825ad07987d662f171a6459b2f0e6
-                t.getPriceData();
-            });
+                    t.init_futurebar();
+                    t.getPriceData();
+                });
             }
         })
     },
 
     init_rankbar: function (){
         this.rankComponent.init((canvas, width, height) => {
-        const barChart = echarts.init(canvas, null, {
-            width: width,
-            height: height
-          });
-          barChart.setOption(this.getRankOption());
-          return barChart;
+            const barChart = echarts.init(canvas, null, {
+                width: width,
+                height: height
+            });
+            barChart.setOption(this.getRankOption());
+            return barChart;
         });
     },
 
     init_futurebar: function (){
         this.futureComponent.init((canvas, width, height) => {
-        const barChart = echarts.init(canvas, null, {
-            width: width,
-            height: height
-          });
+            const barChart = echarts.init(canvas, null, {
+                width: width,
+                height: height
+            });
           barChart.setOption(this.getFutureOption());
           return barChart;
         });
@@ -157,9 +149,8 @@ Page({
                     }
                 },
                 color:'rgba(189,8,28,0.1)',
-    
             }]
-            };
+        };
         return option;
     },
 
@@ -174,6 +165,7 @@ Page({
         car.licenseCity = car.licenseCity.replace('省','');
         car.originalPrice = t.data.originalPrice;
         delete car.userPhone;
+        delete car.multiIndex;
 
         wx.request({
             url: 'http://192.168.1.67:8081/apply/send',
@@ -183,25 +175,16 @@ Page({
                 'content-type': 'application/json'
             },
             success: function(res) {
-<<<<<<< HEAD
-              console.log(res.data);
-              const minEstimate = parseFloat(res.data.minEstimate);
-              const maxEstimate = parseFloat(res.data.maxEstimate);
-              t.setData({
-                rank: res.data.rank,
-                minEstimate: minEstimate,
-                maxEstimate: maxEstimate,
-                minPrice: t.handlePrice(minEstimate),
-                maxPrice: t.handlePrice(maxEstimate),
-                apply_id: res.data.apply_id,
-=======
                 console.log(res.data);
+                const minEstimate = parseFloat(res.data.minEstimate);
+                const maxEstimate = parseFloat(res.data.maxEstimate);
                 t.setData({
                     rank: res.data.rank,
-                    minEstimate: res.data.minEstimate,
-                    maxEstimate: res.data.maxEstimate,
+                    minEstimate: minEstimate,
+                    maxEstimate: maxEstimate,
+                    minPrice: t.handlePrice(minEstimate),
+                    maxPrice: t.handlePrice(maxEstimate),
                     apply_id: res.data.apply_id,
->>>>>>> 286fe769dd7825ad07987d662f171a6459b2f0e6
                 },function(){
                     t.init_rankbar();
                 });
@@ -250,12 +233,12 @@ Page({
                     notification['success']({
                         message: '提交成功，稍后会有客服人员联系',
                         description: '',
-                      });
+                    });
                 } else if (res.status == "0"){
                     notification['error']({
                         message: res.Msg,
                         description: '',
-                      });
+                    });
                 }
             }
         })
