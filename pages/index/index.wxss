@@ -96,3 +96,18 @@ button{
   display: inline-block;
   width: 9%;
 }
+.section .phonebox .secbox{
+    line-height: 20px;
+}
+.section .phonebox view input{
+    display: inline-block;
+    width: 88%;
+    padding-right: 0;
+}
+.section .phonebox view icon{
+    display: inline-block;
+    vertical-align: top;
+    margin-top:10px;
+    width: 8%;
+    height: 22px;
+}

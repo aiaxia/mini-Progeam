@@ -41,15 +41,16 @@
             <view class="picker">
                 <view><span>*</span>行驶里程：</view>
                 <view>
-                    <input type="number" bindinput="onChagekil" />
+                    <input type="number" value="{{mileage}}" bindinput="onChagekil" />
                 </view>
             </view>
         </view>
         <view class="section">
-            <view class="picker">
+            <view class="picker phonebox">
                 <view><span>*</span>电话号码：</view>
-                <view>
-                    <input type="number" bindinput="onChagephone"/>
+                <view class="secbox">
+                    <input type="number" value="{{phone}}" bindinput="onChagephone"/>
+                    <icon size="20" type="{{phoneicon}}"></icon> 
                 </view>
             </view>
         </view>

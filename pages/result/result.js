@@ -42,8 +42,13 @@ Page({
                 'content-type': 'application/json'
             },
             success: function(res) {
+<<<<<<< HEAD
               t.setData({originalPrice:'10'},function(){
                 t.init_futurebar();
+=======
+                t.setData({originalPrice:'10'},function(){
+                t.init_fetruebar();
+>>>>>>> 286fe769dd7825ad07987d662f171a6459b2f0e6
                 t.getPriceData();
             });
             }
@@ -178,6 +183,7 @@ Page({
                 'content-type': 'application/json'
             },
             success: function(res) {
+<<<<<<< HEAD
               console.log(res.data);
               const minEstimate = parseFloat(res.data.minEstimate);
               const maxEstimate = parseFloat(res.data.maxEstimate);
@@ -188,6 +194,14 @@ Page({
                 minPrice: t.handlePrice(minEstimate),
                 maxPrice: t.handlePrice(maxEstimate),
                 apply_id: res.data.apply_id,
+=======
+                console.log(res.data);
+                t.setData({
+                    rank: res.data.rank,
+                    minEstimate: res.data.minEstimate,
+                    maxEstimate: res.data.maxEstimate,
+                    apply_id: res.data.apply_id,
+>>>>>>> 286fe769dd7825ad07987d662f171a6459b2f0e6
                 },function(){
                     t.init_rankbar();
                 });

@@ -7,7 +7,8 @@ Page({
     date: '',
     mileage: '',
     phone: '',
-    phoneeError: false,
+    phoneeError: '',
+    phoneicon: '',
     firstname: '',
     endate: new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-12",
     region: ['', ''],
@@ -2396,8 +2397,13 @@ Page({
 
   },
   onLoad: function (options) {
-    console.log(env)
     let t = this;
+    this.setData({
+      mileage: env.mileage || [],
+      phone: env.phone || "",
+      date: env.date || "",
+      multiIndex: env.multiIndex || [,]
+    })
     wx.setNavigationBarTitle({
       title: '车估估'//页面标题为路由参数
     });
@@ -2411,7 +2417,8 @@ Page({
     this.setData({
       "multiIndex[0]": e.detail.value[0],
       "multiIndex[1]": e.detail.value[1]
-    })
+    });
+    env.multiIndex = e.detail.value;
   },
 
   bindMultiPickerColumnChange: function (e) {
@@ -2435,15 +2442,14 @@ Page({
 
   // 上牌时间
   bindDateChange: function (e) {
-    console.log(e)
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
-    })
+    });
+    // let time = e.detail.value.split("-")[0]+"年"+parseInt(e.detail.value.split("-")[1])+"月";
+    env.date = e.detail.value;
   },
   // 选择城市
   bindRegionChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       region: e.detail.value
     })
@@ -2452,37 +2458,40 @@ Page({
   onChagekil(e){
     this.setData({
       mileage: e.detail.value
-    })
+    });
+    env.mileage = e.detail.value;
   },
   // 点击电话
   onChagephone(e){
-		var testPhone = /^[1][0-9]{10}$/;
-    this.setData({
-      phone: e.detail.value,
-    });
-    if( e.detail.value.length!=11 || !testPhone.test((e.detail.value.replace(/\s/g, '')))){
-
+    let t = this;
+		var testPhone = /^[1][0-9]*$/;
+    let phoneclear = e.detail.value.replace(/\s/g, '');
+    if(phoneclear.length>11){ // 只能输入11位手机
+      env.phone = phoneclear.substring(0, 11);
       this.setData({
-        phoneeError: true
+        phone: phoneclear.substring(0, 11),
+      });
+    }
+    
+    if(phoneclear.length<11 || !testPhone.test(phoneclear)){
+      this.setData({
+        phoneeError: true,
+        phoneicon: 'clear',
       })
-      wx.showToast({
-        title: '请填写正确的手机号码！',
-        icon: 'none'
-      }) 
       return ;
     }else{
       this.setData({
-        phoneeError: false
+        phoneeError: false,
+        phoneicon: "success"
       })
     }
   },
   //点击马上估值
   onClickbtn(){
     let t = this;
-    console.log(this.data)
     if(!this.data.date.length || !this.data.multiIndex.length || !this.data.mileage.length || !this.data.phone.length || this.data.phoneeError){
       wx.showToast({
-        title: '请完整填写信息！',
+        title: '请正确且完整填写信息！',
         icon: 'none',
         duration: 2000
       }) 
@@ -2503,7 +2512,8 @@ Page({
     env.mileage = this.data.mileage;
     env.phone = this.data.phone;
 
-    
-    console.log(env)
+    wx.navigateTo({
+      url: '../result/result'
+    })
   }
 })
