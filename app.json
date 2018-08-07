@@ -1,7 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/fristNav/frist",
     "pages/logs/logs",
     "pages/series/series",
     "pages/brand/brand",

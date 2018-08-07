@@ -23,7 +23,11 @@ Page({
     })
   },
   onClickyear(e){
-    console.log(e.currentTarget.dataset)
-    console.log(env)
+    env.levelId = e.currentTarget.dataset.levelid;
+    env.timeModel = e.currentTarget.dataset.year;
+    env.timeModelName = e.currentTarget.dataset.model;
+    wx.navigateTo({
+      url: '../index/index'
+    })
   }
 })

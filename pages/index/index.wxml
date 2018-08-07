@@ -1,19 +1,63 @@
-<!-- index.wxml -->
-<view class="container">
-	<!-- <view class="userinfo">
-		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
-			获取头像昵称
-		</button>
-		<block wx:else>
-			<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
-		</block>
-	</view> -->
-	<view class="selectbox">
-		<fristNav></fristNav>
-	</view>
-	<view class="section"></view>
-	<view class="usermotto">
-		<!-- <text class="user-motto">{{motto}}</text> -->
-	</view>
+<view class="fristbox">
+    <view class="top1">
+        <text>{{num}}</text>车主进行了车辆的精准评估
+    </view>
+    <view class="middle">
+        <view class="title">车辆评估</view>
+        <view class="section">
+            <view class="picker">
+                <view><span>*</span>选择车型</view>
+                    <view class="con">
+                        <navigator url="../brand/brand" open-type="navigateTo" >
+							<span>{{firstname}}</span>
+							<i class="iconfont icon-jiantouyou" />
+                        </navigator>
+                    </view>
+            </view>
+        </view>
+        <view class="section">
+            <picker mode="date" fields="month" end="{{endate}}" value="{{date}}" bindchange="bindDateChange">
+                <view class="picker">
+                    <view><span>*</span>首次上牌:</view>
+                    <view class="con">
+                        {{date}}
+                        <i class="iconfont icon-jiantouyou" />
+                    </view>
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                <view class="picker">
+                    <view><span>*</span>上牌城市：</view>
+                    <view class="con">
+                        {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}
+                        <i class="iconfont icon-jiantouyou" />
+                    </view>
+                </view>
+            </picker>
+        </view>
+        <view class="section">
+            <view class="picker">
+                <view><span>*</span>行驶里程：</view>
+                <view>
+                    <input type="number" bindinput="onChagekil" />
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="picker">
+                <view><span>*</span>电话号码：</view>
+                <view>
+                    <input type="number" bindinput="onChagephone"/>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom">
+        <button bindtap="onClickbtn">
+            马上估值
+        </button>
+        <span>请完整填写信息，以便估价更加精准</span>
+    </view>
 </view>

@@ -4,7 +4,7 @@
             <view class="flex">
                 <view class="flex group-users" id="{{group.groupName}}">
                     <view class="word">{{group.groupName}}</view>
-                    <view class="user box box-lr" wx:key="{{id}}" wx:for="{{group.users}}" wx:for-item="user" wx:for-index="idx">
+                    <view class="user box box-lr" wx:key="id" wx:for="{{group.users}}" wx:for-item="user" wx:for-index="idx">
                         <view class="flex user-name" data-id="{{user.id}}" data-name="{{user.name}}" bindtap="onChoicebrand">{{user.name}}</view>
                     </view>
                 </view>
