@@ -1,11 +1,6 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/result/result",
-    "pages/series/series",
-    "pages/brand/brand",
-    "pages/year/year"
+    "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

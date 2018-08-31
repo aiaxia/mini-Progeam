@@ -1,22 +1,5 @@
 //app.js
 App({
-  environment:{
-    brandId: undefined,
-    brandName: '',
-    firstLicenseTime: '',
-    levelId: undefined,
-    licenseCity: '',
-    multiIndex: undefined,
-    date: undefined,
-    mileage: undefined,
-    originalPrice: undefined,
-    phone: '',
-    seriesId: undefined,
-    seriesName: '',
-    timeModel: '',
-    timeModelName: '',
-    userPhone:''
-  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -27,13 +10,6 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-          //发起网络请求
-          if(res.code){
-              console.log(res.code)
-              // wx.getPhoneNumber(res)
-          }else{
-              console.log('获取用户登录失败！'+res.errMsg)
-          }
       }
     })
     // 获取用户信息
@@ -44,6 +20,8 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
+              console.log(res)
+              console.log(JSON.parse(res.rawData))
               this.globalData.userInfo = res.userInfo
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -57,7 +35,7 @@ App({
       }
     })
   },
-    globalData: {
+  globalData: {
     userInfo: null
   }
 })

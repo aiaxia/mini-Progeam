@@ -1,9 +1,0 @@
-.yearbox .item{
-    font-size: 17px;
-    font-weight: normal;
-    color: #222222;
-    letter-spacing: -0.41px;
-    line-height: 44px;
-    padding: 0 30rpx;
-    border-bottom: 1px solid #ccc;
-}

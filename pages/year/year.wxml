@@ -1,7 +1,0 @@
-<view class="yearbox">
-    <block wx:for="{{yearList}}" wx:key="{{level_id}}" wx:for-item="item">
-        <view data-year="{{item.year}}" data-model="{{item.model}}" data-levelid="{{item.level_id}}" bindtap="onClickyear" class="item">
-            {{item.year}}年 {{item.model}}
-        </view>
-    </block>
-</view>
